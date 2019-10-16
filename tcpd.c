@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 
+void show_help_menu(void);
+
 int main(int argc, char *argv[])
 {
     if (strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "-h") == 0) {
-        printf("WIP: help menu here ...\n");
+        show_help_menu();
         return 0;
     }
 
@@ -12,4 +14,9 @@ int main(int argc, char *argv[])
     printf("Quit the server with CONTROL-C.\n");
 
     return 0;
+}
+
+void show_help_menu(void)
+{
+    printf("WIP: help menu here ...\n");
 }
