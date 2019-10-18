@@ -5,10 +5,14 @@ void show_help_menu(void);
 
 int main(int argc, char *argv[])
 {
-    if (argc != 2) {
+    if (argc == 1) {
         printf("Missing arguments, please specify port number.\n");
         show_help_menu();
         return 128;
+    } else if (argc > 2) {
+        printf("Too many arugments were provided, please refer the manuals below.\n");
+        show_help_menu();
+        return 1;
     }
 
 
