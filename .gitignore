@@ -1,11 +1,6 @@
-# Ignore all
-*
+.DS_Store
 
-# Unignore all with extensions
-!*.*
-
-# Unignore all dirs
-!*/
-
-# For development environment
-.vscode/*
+# Editor directories and files
+.idea
+.vscode
+*.code-workspace
