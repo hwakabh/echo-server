@@ -1,0 +1,22 @@
+name: Release Please
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    # ref: https://github.com/googleapis/release-please-action/issues/1028#issuecomment-2322139258
+    if: github.head_ref != 'release-please--branches--main'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: googleapis/release-please-action@v4
+        with:
+          manifest-file: .release-please-manifest.json
+          config-file: '.github/release-please-config.json'
