@@ -4,3 +4,6 @@
 .idea
 .vscode
 *.code-workspace
+
+# binaries
+*.bin
