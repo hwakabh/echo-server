@@ -11,19 +11,15 @@ env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
-permissions:
-  contents: read
-  packages: write
 
 jobs:
   build:
     name: Build Image
     runs-on: ubuntu-24.04
 
-    # For Workload Identity
     permissions:
-      contents: 'read'
-      id-token: 'write'
+      contents: read
+      packages: write
 
     steps:
       - name: Checkout
