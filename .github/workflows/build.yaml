@@ -12,7 +12,7 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 permissions:
-  package: write
+  packages: write
 
 jobs:
   build:
