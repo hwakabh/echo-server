@@ -10,11 +10,11 @@ RUN apt-get update && \
 
 RUN gcc -Wall -o /app/echo-server.bin ./echo-server.c
 
-
 # application
-FROM gcr.io/distroless/static-debian12
+FROM gcr.io/distroless/base-debian12 AS serve
 
 COPY --from=build /app/echo-server.bin /
-CMD ["echo-server.bin"]
+# TODO: enabled to fetch via Config Vars
+CMD ["/echo-server.bin", "8088"]
 
 EXPOSE 8088
