@@ -1,5 +1,5 @@
 # builds
-FROM gcc:12.4.0-bookworm AS build
+FROM gcc:14.2.0-bookworm AS build
 
 WORKDIR /app
 COPY . .
