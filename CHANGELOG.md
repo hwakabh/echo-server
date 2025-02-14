@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.3](https://github.com/hwakabh/echo-server/compare/v0.1.2...v0.1.3) (2025-02-14)
+
+
+### Continuous Integration
+
+* added exceptions for cleaning up images and made keeping latest tag. ([ef7e47c](https://github.com/hwakabh/echo-server/commit/ef7e47c8d445daa45abf2e5c0679673f47c390ab))
+* fixed CSV formats. ([51aa30a](https://github.com/hwakabh/echo-server/commit/51aa30ad59ccc2e032a0f98de095b72691a51090))
+* fixed repository name and keeping tags. ([cb282cb](https://github.com/hwakabh/echo-server/commit/cb282cb38a2a63c26116497c9a5a33681fd38d63))
+
 ## [0.1.2](https://github.com/hwakabh/echo-server/compare/v0.1.1...v0.1.2) (2025-02-14)
 
 
