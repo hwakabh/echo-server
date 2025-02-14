@@ -17,9 +17,8 @@ jobs:
       - name: Delete old images
         uses: snok/container-retention-policy@v2
         with:
-          image-names: mosaiqued
-          image-tags: "!latest !run"
-          # For preserve custom run-image for Google Cloud buildpacks
+          image-names: echo-server
+          image-tags: "!latest !main"
           cut-off: 1 days ago JST
           # Keep 1 image within 1 days ago
           keep-at-least: 5
