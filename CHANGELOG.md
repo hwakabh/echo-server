@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.4](https://github.com/hwakabh/echo-server/compare/v0.1.3...v0.1.4) (2025-02-27)
+
+
+### Miscellaneous Chores
+
+* **deps:** update all non-major dependencies ([2aa0e7a](https://github.com/hwakabh/echo-server/commit/2aa0e7aaa71ee993649278cba984425c0853f805))
+* **deps:** update docker/build-push-action action to v6.14.0 ([e8d83be](https://github.com/hwakabh/echo-server/commit/e8d83be335c49bc9ee2dfe205113078d23937d20))
+
 ## [0.1.3](https://github.com/hwakabh/echo-server/compare/v0.1.2...v0.1.3) (2025-02-14)
 
 
