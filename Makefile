@@ -6,7 +6,13 @@ SHELL := /bin/bash
 # all targets are phony
 .PHONY: $(shell egrep -o ^[a-zA-Z_-]+: $(MAKEFILE_LIST) | sed 's/://')
 
-build: ## Start all componentes of portal-core app
+
+--check-gcc:
+	@gcc --version
+
+
+build: --check-gcc ## Start all componentes of portal-core app
+	@echo
 	@gcc -Wall -o echo-server.bin ./echo-server.c
 
 
