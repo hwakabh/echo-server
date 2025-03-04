@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.2.0](https://github.com/hwakabh/echo-server/compare/v0.1.5...v0.2.0) (2025-03-04)
+
+
+### Features
+
+* addd type checks for argv[1]. ([74104e7](https://github.com/hwakabh/echo-server/commit/74104e734a3c05e0c07dc9accfa2a21333d9bec7))
+* **build:** added build scripts as Makefile. ([7a284ae](https://github.com/hwakabh/echo-server/commit/7a284aec03f481397dcda54dcfc50240d827c8e9))
+* enabled to cast port number with socket. ([e4650a7](https://github.com/hwakabh/echo-server/commit/e4650a7aeee1d1f58403f54592206e8e89c28ee0))
+
+
+### Miscellaneous Chores
+
+* added gcc precheck and updated docs. ([afb9272](https://github.com/hwakabh/echo-server/commit/afb92728ecc2bd3dc0358345ac6943f276cce7fe))
+* added notes related to base distroless images. ([b31145c](https://github.com/hwakabh/echo-server/commit/b31145cdd95ad9a2e3cb87b91de6d203d2684f28))
+* added PoC code with using envars. ([32a467b](https://github.com/hwakabh/echo-server/commit/32a467b82d79feff1faa179b52526a6d22b2e427))
+
 ## [0.1.5](https://github.com/hwakabh/echo-server/compare/v0.1.4...v0.1.5) (2025-03-03)
 
 
