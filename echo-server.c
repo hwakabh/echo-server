@@ -5,8 +5,12 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <stdlib.h> // getenv(), atoi()
+#include <ctype.h>  // isdigit()
 
+// prototypes
 void show_help_menu(void);
+int is_string_digit(char *argv[]);
+
 
 int main(int argc, char *argv[])
 {
@@ -24,6 +28,17 @@ int main(int argc, char *argv[])
     if (strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "-h") == 0) {
         show_help_menu();
         return 0;
+    }
+
+    // Check types of arguments
+    int l = strlen(argv[1]);
+    int result = 1;
+    for (int i = 0; i < l && result ; i++) {
+        result = isdigit(argv[1][i]);
+    }
+    if (result != 1) {
+        printf("%s is not a number, please specify the port number to open.\n", argv[1]);
+        return 1;
     }
 
     // TODO: enable to override with envar `LISTEN_PORT`
