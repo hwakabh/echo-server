@@ -4,7 +4,7 @@
 #include <sys/types.h>
 #include <netinet/in.h>
 #include <unistd.h>
-#include <stdlib.h> // getenv()
+#include <stdlib.h> // getenv(), atoi()
 
 void show_help_menu(void);
 
@@ -26,10 +26,10 @@ int main(int argc, char *argv[])
         return 0;
     }
 
+    // TODO: enable to override with envar `LISTEN_PORT`
     // Fetch port number to expose
-    char *envar_hostname = getenv("HOME");
-    printf("%s \n", envar_hostname);
-    // Cast from char ato int
+    // char *envar_hostname = getenv("HOME");
+    // printf("%s \n", envar_hostname);
 
     printf("Serving HTTP on 0.0.0.0 port %s (http://0.0.0.0:%s/) ...\n", argv[1], argv[1]);
     printf("Quit the server with CONTROL-C.\n");
@@ -39,7 +39,10 @@ int main(int argc, char *argv[])
     // Assign address to socket
     struct sockaddr_in addr;
     addr.sin_family = AF_INET;
-    addr.sin_port = htons(8088);
+
+    // Cast from char atoi int for listen port
+    addr.sin_port = htons(atoi(argv[1]));
+
     addr.sin_addr.s_addr = INADDR_ANY;
     // bind socket
     int ret = bind(rsock, (struct sockaddr *)&addr, sizeof(addr));
