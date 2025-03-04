@@ -11,6 +11,7 @@ RUN apt-get update && \
 RUN gcc -Wall -o /app/echo-server.bin ./echo-server.c
 
 # application
+# since application requires gcc, we need to use `base-debian` instead of `static-debian`
 FROM gcr.io/distroless/base-debian12 AS serve
 
 COPY --from=build /app/echo-server.bin /

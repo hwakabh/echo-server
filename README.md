@@ -20,17 +20,24 @@ HTTP1.1 200 OK
 Environmental Variables...etc
 
 ## Build
+Since we have `Makefile` as launcher, for building single binaries you can just run:
+```shell
+% make build
 
+# To see help of each target in Makefile:
+% make
+```
+
+or, of course you can directly invoke `gcc`:
 ```shell
 # gcc
 % gcc -Wall -o echo-server.bin ./echo-server.c
 ```
 
 ## Distributions
-- Source code
-- single binaries
-- container images
-- ...etc
+- Source code (with `git clone`)
+- single binaries (with GitHub Release)
+- container images (with ghcr.io)
 
 ## Credits
 Implementation references on:
