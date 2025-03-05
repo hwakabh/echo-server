@@ -41,6 +41,12 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    // Check max port number
+    if (!(0 < atoi(argv[1]) ) || !(atoi(argv[1]) < 65536)) {
+        printf("Port number [ %s ] is invalid, should be lower than 65535.\n", argv[1]);
+        return 1;
+    }
+
     // TODO: enable to override with envar `LISTEN_PORT`
     // Fetch port number to expose
     // char *envar_hostname = getenv("HOME");
