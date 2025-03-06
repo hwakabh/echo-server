@@ -67,16 +67,28 @@ int main(int argc, char *argv[])
     addr.sin_addr.s_addr = INADDR_ANY;
     // bind socket
     int ret = bind(rsock, (struct sockaddr *)&addr, sizeof(addr));
-    // listen
-    listen(rsock, 5);
-    // awaiting connection
-    int wsock;
-    int len;
-    struct sockaddr_in client;
+    if (ret != 0) {
+        printf("Failed to bind socket.\n");
+        return 1;
+    }
 
-    len = sizeof(client);
-    wsock = accept(rsock, (struct sockaddr *)&client, &len);
-    write(wsock, "HTTP1.1 200 OK\n", 15);
+    while (1) {
+        // listen
+        listen(rsock, 5);
+        // awaiting connection
+        int wsock;
+        int len;
+        struct sockaddr_in client;
+
+        len = sizeof(client);
+        wsock = accept(rsock, (struct sockaddr *)&client, &len);
+
+        char *resp = "HTTP1.1 200 OK\n";
+        write(wsock, resp, strlen(resp));
+        printf("Got response\n");
+
+        close(wsock);
+    }
 
     return 0;
 }
