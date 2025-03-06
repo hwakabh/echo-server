@@ -1,7 +1,7 @@
 // need to run `export NOMAD_VAR_GHCR_TOKEN="...."` before run jobs
 variable "GHCR_TOKEN" {
-  type         = string
-  description  = "GitHub PAT to pull image from Private GitHub Packages."
+  type        = string
+  description = "GitHub PAT to pull image from Private GitHub Packages."
 }
 
 
