@@ -1,0 +1,26 @@
+name: Check
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PRODUCT_VERSION: '1.9.5'
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup nomad
+        uses: hashicorp/setup-nomad@main
+        with:
+          version: ${{ env.PRODUCT_VERSION }}
+
+      - name: Validate Nomad Job definitions
+        run: nomad job validate ./nomad/echo-server.nomad.hcl
