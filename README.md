@@ -34,6 +34,17 @@ or, of course you can directly invoke `gcc`:
 % gcc -Wall -o echo-server.bin ./echo-server.c
 ```
 
+## Deployments
+
+```shell
+# start Nomad on local
+% nomad agent -dev -config=nomad/nomad.config.hcl
+
+# deploy echo-server application
+$ export NOMAD_VAR_GHCR_TOKEN="***"
+$ nomad job run nomad/echo-server.nomad.hcl
+```
+
 ## Distributions
 - Source code (with `git clone`)
 - single binaries (with GitHub Release)
