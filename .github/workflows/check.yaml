@@ -23,4 +23,6 @@ jobs:
           version: ${{ env.PRODUCT_VERSION }}
 
       - name: Validate Nomad Job definitions
+        env:
+          NOMAD_VAR_GHCR_TOKEN: ${{ secrets.NOMAD_VAR_GHCR_TOKEN }}
         run: nomad job validate ./nomad/echo-server.nomad.hcl
