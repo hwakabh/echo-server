@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.3.0](https://github.com/hwakabh/echo-server/compare/v0.2.0...v0.3.0) (2025-03-06)
+
+
+### Features
+
+* added logics of closed-loop for serving application as daemon. ([b2134fe](https://github.com/hwakabh/echo-server/commit/b2134fed8cc0aa4608d77aa0c343924d6d051967))
+* added logics of closed-loop for serving application as daemon. ([5c91063](https://github.com/hwakabh/echo-server/commit/5c910639b45b19c63fc2aec743f8df28f056d423))
+* added validations with maximum port number. ([f8b9903](https://github.com/hwakabh/echo-server/commit/f8b9903da71ac842c63f6c4eb29e0185f13a58ab))
+* added validations with maximum port number. ([8729dc1](https://github.com/hwakabh/echo-server/commit/8729dc141a0f3af543e77c242f8a118866bb401b))
+
+
+### Miscellaneous Chores
+
+* run fmt for Nomad job definitions. ([bfa3ace](https://github.com/hwakabh/echo-server/commit/bfa3acef6ffd78a2bdf4304047a4ebab6d1eb0ce))
+
+
+### Continuous Integration
+
+* added configs of semantic-pr. ([cc77664](https://github.com/hwakabh/echo-server/commit/cc77664da095bd5a6ae84792627eb1927ca1a5b5))
+* added pipeline for validations of Nomad job definitions. ([de4a289](https://github.com/hwakabh/echo-server/commit/de4a289866f12722d2d97bc7152a8e2a66ad3af4))
+* fixed error with fetching NOMAD_VAR_GHCR_TOKEN. ([5aede02](https://github.com/hwakabh/echo-server/commit/5aede027cce9eb3955bb0f4c8e9b6e80dbd349ec))
+
 ## [0.2.0](https://github.com/hwakabh/echo-server/compare/v0.1.5...v0.2.0) (2025-03-04)
 
 
