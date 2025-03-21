@@ -35,7 +35,7 @@ jobs:
           echo "Generating check sum file: echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }}.sha256"
           shasum -a 256 echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }} > echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }}.sha256
 
-      - name: Upload binaries
+      - name: Upload assets to release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
