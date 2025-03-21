@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.2](https://github.com/hwakabh/echo-server/compare/v0.3.1...v0.3.2) (2025-03-21)
+
+
+### Miscellaneous Chores
+
+* **ci:** enabled to use PAT instread of workflow default token. ([6ae27ca](https://github.com/hwakabh/echo-server/commit/6ae27ca4194efe62409066cdc855090ed8ea8c63))
+* **ci:** enabled to use PAT instread of workflow default token. ([4648f7b](https://github.com/hwakabh/echo-server/commit/4648f7b7d237d8eb29bb754319719ea605309e99))
+
 ## [0.3.1](https://github.com/hwakabh/echo-server/compare/v0.3.0...v0.3.1) (2025-03-21)
 
 
