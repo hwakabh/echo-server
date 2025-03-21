@@ -2,11 +2,8 @@ name: Upload assets to release
 
 on:
   push:
-    pull_request:
-    # branches:
-    #   - main
-    # tags:
-    #   - "v*.*.*"
+    tags:
+      - "v*.*.*"
   workflow_dispatch:
 
 permissions:
@@ -32,14 +29,11 @@ jobs:
 
       - name: Build binaries
         run: |
-          # gcc -Wall -o echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }} ./echo-server.c
-          gcc -Wall -o echo-server_${{ matrix.builds.arch }}-v0.0.0 ./echo-server.c
+          echo "Compiling echo-server ${{ github.ref_name }} binary for ${{ matrix.builds.arch }} ..."
+          gcc -Wall -o echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }} ./echo-server.c
 
-      - name: Fetch latest release and upload binaries
+      - name: Upload binaries
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # export LATEST_RELEASE=$(gh release list --limit 1 --json tagName --jq '.[].tagName')
-          # gh release upload $LATEST_RELEASE
-          # gh release upload ${{ github.ref_name }} echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }}
-          gh release upload v0.3.0 echo-server_${{ matrix.builds.arch }}-v0.0.0
+          gh release upload ${{ github.ref_name }} echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }}
