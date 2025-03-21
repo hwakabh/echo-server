@@ -45,4 +45,4 @@ jobs:
           gh release upload ${{ github.ref_name }} echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }}
 
           echo "Uploading checksum file: echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }}.sha256"
-          gh release upload ${{ github.ref_name }} echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }}.sha56
+          gh release upload ${{ github.ref_name }} echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }}.sha256
