@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.3.1](https://github.com/hwakabh/echo-server/compare/v0.3.0...v0.3.1) (2025-03-21)
+
+
+### Miscellaneous Chores
+
+* **deps:** update docker/login-action action to v3.4.0 ([f75ec03](https://github.com/hwakabh/echo-server/commit/f75ec03b07883a6a1c3f7193df472c85ec091380))
+* fixed debugging triggers and made tag name as dynamic values. ([c97be6d](https://github.com/hwakabh/echo-server/commit/c97be6debc418b1fb2b2ac1f4023b6c39ed12d7a))
+* updated with static tags for debugging. ([a34935b](https://github.com/hwakabh/echo-server/commit/a34935bd72f7348cde2c934666b91d7a7a083901))
+
+
+### Continuous Integration
+
+* added workflow for uploading assets to release ([cfcf2d1](https://github.com/hwakabh/echo-server/commit/cfcf2d1581a2addd0a42fbab53361150366cdd0c))
+* added workflows for uploading assets to release. ([59d4925](https://github.com/hwakabh/echo-server/commit/59d49252f359b7cea174b575c1ced6314751aca5))
+* added workflows for uploading assets to release. ([e0b9308](https://github.com/hwakabh/echo-server/commit/e0b9308ee0dc954ff1345834cac9e8863af39d5c))
+* added workflows for uploading assets to release. ([8bcc932](https://github.com/hwakabh/echo-server/commit/8bcc932b175f9f7997a237231a33495dce0e8c22))
+
 ## [0.3.0](https://github.com/hwakabh/echo-server/compare/v0.2.0...v0.3.0) (2025-03-06)
 
 
