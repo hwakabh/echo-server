@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.3](https://github.com/hwakabh/echo-server/compare/v0.3.2...v0.3.3) (2025-03-21)
+
+
+### Continuous Integration
+
+* enabled to include checksum file in release. ([f9daef7](https://github.com/hwakabh/echo-server/commit/f9daef755065bc978d78fd2628ff7862a878a2af))
+* enabled to include checksum file in release. ([db6b0e2](https://github.com/hwakabh/echo-server/commit/db6b0e275be63ce14109bab06ce7756a05068c47))
+
 ## [0.3.2](https://github.com/hwakabh/echo-server/compare/v0.3.1...v0.3.2) (2025-03-21)
 
 
