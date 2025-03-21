@@ -33,6 +33,7 @@ jobs:
       - name: Build binaries
         run: |
           # gcc -Wall -o echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }} ./echo-server.c
+          gcc -Wall -o echo-server_${{ matrix.builds.arch }}-v0.0.0 ./echo-server.c
 
       - name: Fetch latest release and upload binaries
         env:
