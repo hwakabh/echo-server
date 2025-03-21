@@ -1,5 +1,6 @@
-#include <stdio.h>
+#include <stdio.h>  // printf(), stderror()
 #include <string.h>
+#include <errno.h> // errno
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <netinet/in.h>
@@ -9,25 +10,25 @@
 
 // prototypes
 void show_help_menu(void);
-int is_string_digit(char *argv[]);
+int read_request_body_per_line(int socket, char *buf, int len);
 
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     // validation: argument parse
     if (argc == 1) {
-        printf("Missing arguments, please specify port number.\n");
+        printf("Missing arguments, please specify port number.\n\n");
         show_help_menu();
-        return 128;
+        exit(128);
     } else if (argc > 2) {
-        printf("Too many arugments were provided, please refer the manuals below.\n");
+        printf("Too many arugments were provided, please refer the manuals below.\n\n");
         show_help_menu();
-        return 1;
+        exit(1);
     }
 
-    if (strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "-h") == 0) {
+    if (strcmp(argv[1], "help") == 0 || strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "-h") == 0) {
+        printf("echo-server is a simple HTTP server with C implementation\n\n");
         show_help_menu();
-        return 0;
+        exit(0);
     }
 
     // Check types of arguments
@@ -38,13 +39,13 @@ int main(int argc, char *argv[])
     }
     if (result != 1) {
         printf("%s is not a number, please specify the port number to open.\n", argv[1]);
-        return 1;
+        exit(1);
     }
 
     // Check max port number
     if (!(0 < atoi(argv[1]) ) || !(atoi(argv[1]) < 65536)) {
         printf("Port number [ %s ] is invalid, should be lower than 65535.\n", argv[1]);
-        return 1;
+        exit(1);
     }
 
     // TODO: enable to override with envar `LISTEN_PORT`
@@ -69,9 +70,11 @@ int main(int argc, char *argv[])
     int ret = bind(rsock, (struct sockaddr *)&addr, sizeof(addr));
     if (ret != 0) {
         printf("Failed to bind socket.\n");
-        return 1;
+        exit(1);
     }
 
+    // array for storing request body
+    char resp[255];
     while (1) {
         // listen
         listen(rsock, 5);
@@ -82,18 +85,46 @@ int main(int argc, char *argv[])
 
         len = sizeof(client);
         wsock = accept(rsock, (struct sockaddr *)&client, &len);
+        if (wsock == -1) {
+            fprintf(stderr, "Failed to accept with socket: code %s\n", strerror(errno));
+            exit(1);
+        }
 
-        char *resp = "HTTP1.1 200 OK\n";
-        write(wsock, resp, strlen(resp));
         printf("Got response\n");
+        read_request_body_per_line(wsock, resp, sizeof(resp));
 
+        // char *resp = "HTTP1.1 200 OK\n";
+        write(wsock, resp, strlen(resp));
+
+        // disconnect and clear values in array
         close(wsock);
+        memset(resp, 0, sizeof(resp));
     }
 
-    return 0;
+    exit(0);
 }
 
-void show_help_menu(void)
-{
-    printf("WIP: help menu here ...\n");
+void show_help_menu(void) {
+    printf("Usage: echo-server <port>\n");
+    exit(0);
+}
+
+int read_request_body_per_line(int socket, char *buf, int len) {
+    // array to store strings (a single line in reqbody)
+    char *s = buf;
+    int l = len;
+
+    // read character in a single line
+    int c = read(socket, s, l);
+    // apply to array until last char become line-break
+    while ((c > 0) && (s[c-1] != '\n')) {
+        s += c;
+        l = -c;
+        c = read(socket, s ,l);
+    }
+    if (c < 0) {
+      return c;
+    }
+
+    return len - l;
 }
