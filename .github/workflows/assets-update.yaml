@@ -32,6 +32,8 @@ jobs:
           echo "Compiling echo-server ${{ github.ref_name }} binary for ${{ matrix.builds.arch }} ..."
           gcc -Wall -o echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }} ./echo-server.c
 
+      - name: Generate checksum file
+        run: |
           echo "Generating check sum file: echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }}.sha256"
           shasum -a 256 echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }} > echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }}.sha256
 
@@ -45,4 +47,4 @@ jobs:
           gh release upload ${{ github.ref_name }} echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }}
 
           echo "Uploading checksum file: echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }}.sha256"
-          gh release upload ${{ github.ref_name }} echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }}.sha56
+          gh release upload ${{ github.ref_name }} echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }}.sha256
