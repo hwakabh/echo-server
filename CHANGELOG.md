@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.5](https://github.com/hwakabh/echo-server/compare/v0.3.4...v0.3.5) (2025-03-21)
+
+
+### Bug Fixes
+
+* typo in checksum file. ([0a6e057](https://github.com/hwakabh/echo-server/commit/0a6e057b6fa48654c22836eed4db2f79f9a6a02f))
+
+
+### Miscellaneous Chores
+
+* reverted back job separations. ([c213abe](https://github.com/hwakabh/echo-server/commit/c213abe7b0f7c6aedddaf1c54dbede68ed6388cf))
+
 ## [0.3.4](https://github.com/hwakabh/echo-server/compare/v0.3.3...v0.3.4) (2025-03-21)
 
 
