@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.3.4](https://github.com/hwakabh/echo-server/compare/v0.3.3...v0.3.4) (2025-03-21)
+
+
+### Bug Fixes
+
+* included checksum generation into compile process. ([c649429](https://github.com/hwakabh/echo-server/commit/c649429c241d90eb126a19c2973b2f9442aeae14))
+* included checksum generation into compile process. ([8d151c9](https://github.com/hwakabh/echo-server/commit/8d151c9205860df96995a7c46d9535db59c4278e))
+
+
+### Miscellaneous Chores
+
+* renamed job for uploadings. ([2d0acc0](https://github.com/hwakabh/echo-server/commit/2d0acc0e5677cb0ae9b4aacc796f97df61d919be))
+
 ## [0.3.3](https://github.com/hwakabh/echo-server/compare/v0.3.2...v0.3.3) (2025-03-21)
 
 
