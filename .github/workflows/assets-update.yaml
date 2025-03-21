@@ -1,0 +1,43 @@
+name: Upload assets to release
+
+on:
+  push:
+    pull_request:
+    # branches:
+    #   - main
+    # tags:
+    #   - "v*.*.*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-assets:
+    strategy:
+      matrix:
+        builds:
+          - os: ubuntu-24.04
+            arch: linux-x86_64
+          - os: ubuntu-24.04-arm
+            arch: linux-aarch64
+          - os: macos-14
+            arch: darwin-aarch64
+
+    runs-on: ${{ matrix.builds.os }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build binaries
+        run: |
+          gcc -Wall -o echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }} ./echo-server.c
+
+      - name: Fetch latest release and upload binaries
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # export LATEST_RELEASE=$(gh release list --limit 1 --json tagName --jq '.[].tagName')
+          # gh release upload $LATEST_RELEASE
+          gh release upload ${{ github.ref_name }} echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }}
