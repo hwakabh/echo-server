@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.8](https://github.com/hwakabh/echo-server/compare/v0.3.7...v0.3.8) (2025-04-07)
+
+
+### Miscellaneous Chores
+
+* **deps:** update hwakabh/semantic-issue-action action to v0.5.4 ([b5c0ea4](https://github.com/hwakabh/echo-server/commit/b5c0ea4fd8535b10cf3a8df1cad0b17591e47577))
+* **deps:** update hwakabh/semantic-issue-action action to v0.5.4 ([d72df90](https://github.com/hwakabh/echo-server/commit/d72df9039ee88aad193784a7cbf887ff08fd109e))
+
 ## [0.3.7](https://github.com/hwakabh/echo-server/compare/v0.3.6...v0.3.7) (2025-03-25)
 
 
