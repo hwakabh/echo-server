@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.9](https://github.com/hwakabh/echo-server/compare/v0.3.8...v0.3.9) (2025-04-09)
+
+
+### Build System
+
+* updated the condition to evaluate cmdline args. ([3b3f4be](https://github.com/hwakabh/echo-server/commit/3b3f4be5b111f68ee37a44299f6577a2b5c61adb))
+* updated the condition to evaluate cmdline args. ([29ee5aa](https://github.com/hwakabh/echo-server/commit/29ee5aad56e67d37ebc7fb34cb502014db5b4083))
+
 ## [0.3.8](https://github.com/hwakabh/echo-server/compare/v0.3.7...v0.3.8) (2025-04-07)
 
 
