@@ -17,12 +17,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup nomad
-        uses: hashicorp/setup-nomad@main
+      # https://github.com/bazel-contrib/setup-bazel
+      - name: Setup bazel
+        uses: bazel-contrib/setup-bazel@0.14.0
         with:
-          version: ${{ env.PRODUCT_VERSION }}
+          bazelisk-cache: true
+          disk-cache: ${{ github.workflow }}
+          repository-cache: true
 
-      - name: Validate Nomad Job definitions
-        env:
-          NOMAD_VAR_GHCR_TOKEN: ${{ secrets.NOMAD_VAR_GHCR_TOKEN }}
-        run: nomad job validate ./nomad/echo-server.nomad.hcl
+      - name: Build & Check C application with binaries
+        run: |
+          bazel build //src:bin
+          bazel run //src:bin
+
+      # - name: Setup nomad
+      #   uses: hashicorp/setup-nomad@main
+      #   with:
+      #     version: ${{ env.PRODUCT_VERSION }}
+
+      # - name: Validate Nomad Job definitions
+      #   env:
+      #     NOMAD_VAR_GHCR_TOKEN: ${{ secrets.NOMAD_VAR_GHCR_TOKEN }}
+      #   run: nomad job validate ./nomad/echo-server.nomad.hcl
