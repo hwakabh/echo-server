@@ -1,0 +1,26 @@
+###############################################################################
+# Bazel now uses Bzlmod by default to manage external dependencies.
+# Please consider migrating your external dependencies from WORKSPACE to MODULE.bazel.
+#
+# For more details, please check https://github.com/bazelbuild/bazel/issues/18958
+###############################################################################
+
+# Module configure ref:
+# https://bazel.build/external/module
+# https://bazel.build/rules/lib/globals/module
+
+bazel_dep(name = "rules_cc", version = "0.1.1")
+bazel_dep(name = "rules_oci", version = "2.0.0")
+bazel_dep(name = "rules_pkg", version = "1.0.1")
+
+oci = use_extension("@rules_oci//oci:extensions.bzl", "oci")
+oci.pull(
+    name = "distroless_static_debian12",
+    image = "gcr.io/distroless/static-debian12",
+    # "linux/amd64", "linux/arm64", "linux/arm64/v8", "linux/arm/v7", "linux/ppc64le", "linux/s390x", "linux/386", "linux/mips64le"
+    platforms = [
+        "linux/arm64/v8",
+    ],
+    tag = "nonroot",
+)
+use_repo(oci, "distroless_static_debian12", "distroless_static_debian12_linux_arm64_v8")
