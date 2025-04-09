@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.11](https://github.com/hwakabh/echo-server/compare/v0.3.10...v0.3.11) (2025-04-09)
+
+
+### Bug Fixes
+
+* **release:** typo in filenames. ([80c8b7b](https://github.com/hwakabh/echo-server/commit/80c8b7bd403a93a00aecfea355390b8a1eb4faea))
+* **release:** typo in filenames. ([725c7a8](https://github.com/hwakabh/echo-server/commit/725c7a82b9d782082d1b78508a20e755d858f1ed))
+
 ## [0.3.10](https://github.com/hwakabh/echo-server/compare/v0.3.9...v0.3.10) (2025-04-09)
 
 
