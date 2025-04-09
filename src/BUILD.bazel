@@ -1,0 +1,52 @@
+# https://bazel.build/reference/be/c-cpp
+load("@rules_cc//cc:defs.bzl", "cc_binary")
+# https://github.com/bazelbuild/rules_pkg
+load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
+# https://github.com/bazel-contrib/rules_oci/blob/main/docs/cpp.md
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_image_index", "oci_load", "oci_push")
+
+# Rules for C/C++ application build
+cc_binary(
+  name = "bin",
+    srcs = [
+      "echo-server.c",
+      "helpers.c",
+      "helpers.h",
+    ],
+    copts = [
+      "-Wall"
+      ],
+)
+
+# Rules for container image builds
+pkg_tar(
+    name = "tar",
+    # ref to name above in cc_binary()
+    srcs = [":bin"],
+)
+
+oci_image(
+    name = "image_arm64",
+    # defined in MODULE.bazel
+    base = "@distroless_static_debian12",
+    # os = "linux",
+    # architecture = "amd64",
+
+    # ref to name above in pkg_tar()
+    tars = [":tar"],
+    entrypoint = ["/echo"],
+)
+
+oci_load(
+    name = "load",
+    # ref to name above in oci_image()
+    image = ":image_arm64",
+    repo_tags = ["ghcr.io/hwakabh/echo-server:local"],
+)
+
+oci_push(
+    name = "push",
+    image = ":image_arm64",
+    repository = "ghcr.io/hwakabh/echo-server",
+    remote_tags = ["latest"],
+)

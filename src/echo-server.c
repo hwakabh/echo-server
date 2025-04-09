@@ -4,13 +4,11 @@
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <netinet/in.h>
-#include <unistd.h>
-#include <stdlib.h> // getenv(), atoi()
+#include <unistd.h> // read()
+#include <stdlib.h> // getenv(), atoi(), exit()
 #include <ctype.h>  // isdigit()
 
-// prototypes
-void show_help_menu(void);
-int read_request_body_per_line(int socket, char *buf, int len);
+#include "helpers.h" // show_help_menu(), read_request_body_per_line()
 
 
 int main(int argc, char *argv[]) {
@@ -103,29 +101,4 @@ int main(int argc, char *argv[]) {
     }
 
     exit(0);
-}
-
-void show_help_menu(void) {
-    printf("Usage: echo-server <port>\n");
-    exit(0);
-}
-
-int read_request_body_per_line(int socket, char *buf, int len) {
-    // array to store strings (a single line in reqbody)
-    char *s = buf;
-    int l = len;
-
-    // read character in a single line
-    int c = read(socket, s, l);
-    // apply to array until last char become line-break
-    while ((c > 0) && (s[c-1] != '\n')) {
-        s += c;
-        l = -c;
-        c = read(socket, s ,l);
-    }
-    if (c < 0) {
-      return c;
-    }
-
-    return len - l;
 }
