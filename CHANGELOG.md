@@ -1,5 +1,38 @@
 # Changelog
 
+## [0.3.10](https://github.com/hwakabh/echo-server/compare/v0.3.9...v0.3.10) (2025-04-09)
+
+
+### Documentation
+
+* replaced make commands with bazel. ([c26d6c6](https://github.com/hwakabh/echo-server/commit/c26d6c6398f0470049dd16f9625a6492a4ef19a8))
+
+
+### Miscellaneous Chores
+
+* added --help flags for application checks and removed docker related workflows. ([d29b94e](https://github.com/hwakabh/echo-server/commit/d29b94e41c3faeaaa007db6e7323942403b8c749))
+* fixed error on builds with CPU arch. ([100eac5](https://github.com/hwakabh/echo-server/commit/100eac553ddeb867ee3ae8cf756c3a1520b13623))
+* fixed workflow triggers. ([f84c801](https://github.com/hwakabh/echo-server/commit/f84c801d62d340299156164187ad6919f2673016))
+* implemented bazel as build/push systems ([3add6e7](https://github.com/hwakabh/echo-server/commit/3add6e77f7b0d038d8d061a98d577f185cc37d2d))
+* removed files with replacement with bazel. ([b48da97](https://github.com/hwakabh/echo-server/commit/b48da972462516d3d029c0581476d60dcd179d29))
+* renamed target name of bazel for single binary. ([908077a](https://github.com/hwakabh/echo-server/commit/908077a5282a4fe71fb82c84ed3da9f431818c89))
+
+
+### Code Refactoring
+
+* separated with multiple source/header files. ([527c8d6](https://github.com/hwakabh/echo-server/commit/527c8d60eabe6326bb4eae59a57d9e60affdd110))
+
+
+### Build System
+
+* implemented build process using bazel. ([71586f2](https://github.com/hwakabh/echo-server/commit/71586f2181f040b9c2e14721e0077570d32e9006))
+
+
+### Continuous Integration
+
+* replaced workflows from docker to bazel. ([3cd2642](https://github.com/hwakabh/echo-server/commit/3cd2642f5df8c032f60f4c56d80232d06f148223))
+* updated compile commands by changes of refactoring. ([1312654](https://github.com/hwakabh/echo-server/commit/1312654184f70ee0e5aee79814bf8ccd7cf7af07))
+
 ## [0.3.9](https://github.com/hwakabh/echo-server/compare/v0.3.8...v0.3.9) (2025-04-09)
 
 
