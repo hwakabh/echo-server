@@ -28,7 +28,7 @@ jobs:
       - name: Build & Check C application with binaries
         run: |
           bazel build //src:bin
-          bazel run //src:bin
+          bazel run //src:bin -- --help
 
       # - name: Setup nomad
       #   uses: hashicorp/setup-nomad@main
