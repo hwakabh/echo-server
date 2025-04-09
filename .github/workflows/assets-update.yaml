@@ -31,7 +31,7 @@ jobs:
         run: |
           echo "Compiling echo-server ${{ github.ref_name }} binary for ${{ matrix.builds.arch }} ..."
           gcc -Wall -c ./src/echo-server.c
-          gcc -Wall -c ./src/helper.c
+          gcc -Wall -c ./src/helpers.c
           gcc -Wall -o echo-server_${{ matrix.builds.arch }}-${{ github.ref_name }} ./*.o
 
       - name: Generate checksum file
