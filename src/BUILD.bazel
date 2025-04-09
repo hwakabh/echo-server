@@ -7,7 +7,7 @@ load("@rules_oci//oci:defs.bzl", "oci_image", "oci_image_index", "oci_load", "oc
 
 # Rules for C/C++ application build
 cc_binary(
-  name = "echo",
+  name = "bin",
     srcs = [
       "echo-server.c",
       "helpers.c",
@@ -22,7 +22,7 @@ cc_binary(
 pkg_tar(
     name = "tar",
     # ref to name above in cc_binary()
-    srcs = [":echo"],
+    srcs = [":bin"],
 )
 
 oci_image(
