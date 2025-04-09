@@ -34,10 +34,10 @@ int main(int argc, char *argv[]) {
     // Check types of arguments
     int l = strlen(argv[1]);
     int result = 1;
-    for (int i = 0; i < l && result ; i++) {
+    for (int i = 0; i < l && result == 1; i++) {
         result = isdigit(argv[1][i]);
     }
-    if (result != 1) {
+    if (result == 0) {
         printf("%s is not a number, please specify the port number to open.\n", argv[1]);
         exit(1);
     }
@@ -73,6 +73,7 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
 
+    printf("Starting application now.\n");
     // array for storing request body
     char resp[255];
     while (1) {
