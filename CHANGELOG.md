@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.3.12](https://github.com/hwakabh/echo-server/compare/v0.3.11...v0.3.12) (2025-04-10)
+
+
+### Documentation
+
+* added details for each section. ([a19b76b](https://github.com/hwakabh/echo-server/commit/a19b76b6a267050e75d29b7b7451ad6da1a0455a))
+
+
+### Miscellaneous Chores
+
+* **deps:** update all non-major dependencies ([beb5aae](https://github.com/hwakabh/echo-server/commit/beb5aae3af3e52785e994dfcf80bcd8828434ed3))
+* **deps:** update all non-major dependencies ([5408ed4](https://github.com/hwakabh/echo-server/commit/5408ed40ef4d28b681f22a445502949a5c4d1463))
+* removed nomad deployment configs. ([29768ec](https://github.com/hwakabh/echo-server/commit/29768ec112f5bc81c72177f456c17c048940d6d2))
+
+
+### Build System
+
+* fixed error on OCI image startup ([3f3128d](https://github.com/hwakabh/echo-server/commit/3f3128de8bb34bc2b58110cd611587282cdc1e3b))
+* replaced distroless images with cc-debian12. ([1100d77](https://github.com/hwakabh/echo-server/commit/1100d775a512938de808417c8d22c1249987ffaa))
+
 ## [0.3.11](https://github.com/hwakabh/echo-server/compare/v0.3.10...v0.3.11) (2025-04-09)
 
 
