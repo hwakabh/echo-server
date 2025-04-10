@@ -21,32 +21,27 @@ cc_binary(
 # Rules for container image builds
 pkg_tar(
     name = "tar",
-    # ref to name above in cc_binary()
-    srcs = [":bin"],
+    srcs = [":bin"], # ref to name above in cc_binary()
 )
 
 oci_image(
     name = "image_arm64",
-    # defined in MODULE.bazel
-    base = "@distroless_static_debian12",
+    base = "@distroless_cc_debian12", # defined in MODULE.bazel
     # os = "linux",
     # architecture = "amd64",
-
-    # ref to name above in pkg_tar()
-    tars = [":tar"],
-    entrypoint = ["/echo"],
+    tars = [":tar"], # ref to name above in pkg_tar()
+    entrypoint = ["/bin"], # ref to output above in cc_binary, same as name field
 )
 
 oci_load(
     name = "load",
-    # ref to name above in oci_image()
-    image = ":image_arm64",
+    image = ":image_arm64", # ref to name above in oci_image()
     repo_tags = ["ghcr.io/hwakabh/echo-server:local"],
 )
 
 oci_push(
     name = "push",
-    image = ":image_arm64",
+    image = ":image_arm64", # ref to name above in oci_image()
     repository = "ghcr.io/hwakabh/echo-server",
     remote_tags = ["latest"],
 )

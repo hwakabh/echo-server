@@ -15,13 +15,12 @@ bazel_dep(name = "rules_pkg", version = "1.0.1")
 
 oci = use_extension("@rules_oci//oci:extensions.bzl", "oci")
 oci.pull(
-    name = "distroless_static_debian12",
-    image = "gcr.io/distroless/static-debian12",
+    name = "distroless_cc_debian12",
+    image = "gcr.io/distroless/cc-debian12",
     # "linux/amd64", "linux/arm64", "linux/arm64/v8", "linux/arm/v7", "linux/ppc64le", "linux/s390x", "linux/386", "linux/mips64le"
     platforms = [
         "linux/amd64",
-        "linux/arm64/v8",
     ],
     tag = "nonroot",
 )
-use_repo(oci, "distroless_static_debian12", "distroless_static_debian12_linux_amd64", "distroless_static_debian12_linux_arm64_v8")
+use_repo(oci, "distroless_cc_debian12", "distroless_cc_debian12_linux_amd64")
