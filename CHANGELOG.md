@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.14](https://github.com/hwakabh/echo-server/compare/v0.3.13...v0.3.14) (2025-04-22)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency rules_oci to v2.2.6 ([3d68e42](https://github.com/hwakabh/echo-server/commit/3d68e424a46c8fa7c6e44d7180cec7286d3b36ff))
+* **deps:** update dependency rules_oci to v2.2.6 ([68cedc8](https://github.com/hwakabh/echo-server/commit/68cedc893e4db863f1a3462fca3173794f6c4aff))
+
 ## [0.3.13](https://github.com/hwakabh/echo-server/compare/v0.3.12...v0.3.13) (2025-04-16)
 
 
