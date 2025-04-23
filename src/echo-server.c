@@ -5,53 +5,68 @@
 #include <sys/types.h>
 #include <netinet/in.h>
 #include <unistd.h> // read()
-#include <stdlib.h> // getenv(), atoi(), exit()
+#include <stdlib.h> // atoi(), exit()
 #include <ctype.h>  // isdigit()
 
 #include "helpers.h" // show_help_menu(), read_request_body_per_line()
 
 
 int main(int argc, char *argv[]) {
+    char port[5];
+
     // validation: argument parse
-    if (argc == 1) {
-        printf("Missing arguments, please specify port number.\n\n");
-        show_help_menu();
-        exit(128);
-    } else if (argc > 2) {
+    if (argc > 2) {
         printf("Too many arugments were provided, please refer the manuals below.\n\n");
         show_help_menu();
         exit(1);
     }
 
-    if (strcmp(argv[1], "help") == 0 || strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "-h") == 0) {
-        printf("echo-server is a simple HTTP server with C implementation\n\n");
-        show_help_menu();
-        exit(0);
+    else if (argc == 2) {
+      // when provided LISTEN_PORT and argment at the same time, the LISTEN_PORT has been used
+      if (getenv("LISTEN_PORT") == NULL) {
+          strcpy(port, argv[1]);
+      } else {
+          strcpy(port, getenv("LISTEN_PORT"));
+      }
+
+      if (strcmp(argv[1], "help") == 0 || strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "-h") == 0) {
+          printf("echo-server is a simple HTTP server with C implementation\n\n");
+          show_help_menu();
+          exit(0);
+      }
+
+      // Check types of arguments
+      int l = strlen(argv[1]);
+      int result = 1;
+      for (int i = 0; i < l && result == 1; i++) {
+          result = isdigit(argv[1][i]);
+      }
+      if (result == 0) {
+          printf("%s is not a number, please specify the port number to open.\n", argv[1]);
+          exit(1);
+      }
+
+      // Check max port number
+      if (!(0 < atoi(argv[1]) ) || !(atoi(argv[1]) < 65536)) {
+          printf("Port number [ %s ] is invalid, should be lower than 65535.\n", argv[1]);
+          exit(1);
+      }
+
     }
 
-    // Check types of arguments
-    int l = strlen(argv[1]);
-    int result = 1;
-    for (int i = 0; i < l && result == 1; i++) {
-        result = isdigit(argv[1][i]);
-    }
-    if (result == 0) {
-        printf("%s is not a number, please specify the port number to open.\n", argv[1]);
-        exit(1);
-    }
-
-    // Check max port number
-    if (!(0 < atoi(argv[1]) ) || !(atoi(argv[1]) < 65536)) {
-        printf("Port number [ %s ] is invalid, should be lower than 65535.\n", argv[1]);
-        exit(1);
+    else if (argc == 1) {
+      if (getenv("LISTEN_PORT") == NULL) {
+          printf("Please specify port number to listen, either using LISTEN_PORT or providing as CLI arguments.\n");
+          show_help_menu();
+          exit(1);
+        } else {
+          strcpy(port, getenv("LISTEN_PORT"));
+      }
     }
 
-    // TODO: enable to override with envar `LISTEN_PORT`
-    // Fetch port number to expose
-    // char *envar_hostname = getenv("HOME");
-    // printf("%s \n", envar_hostname);
 
-    printf("Serving HTTP on 0.0.0.0 port %s (http://0.0.0.0:%s/) ...\n", argv[1], argv[1]);
+    // start app
+    printf("Serving HTTP on 0.0.0.0 port %s (http://0.0.0.0:%s/) ...\n", port, port);
     printf("Quit the server with CONTROL-C.\n");
 
     // Create sockets
@@ -61,7 +76,7 @@ int main(int argc, char *argv[]) {
     addr.sin_family = AF_INET;
 
     // Cast from char atoi int for listen port
-    addr.sin_port = htons(atoi(argv[1]));
+    addr.sin_port = htons(atoi(port));
 
     addr.sin_addr.s_addr = INADDR_ANY;
     // bind socket

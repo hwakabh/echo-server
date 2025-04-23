@@ -1,6 +1,8 @@
 #include <stdio.h>      // printf()
 #include <unistd.h>     // read()
-#include <stdlib.h>     // exit()
+#include <stdlib.h>     // exit(), getenv()
+#include <string.h>     // strcpy()
+
 
 void show_help_menu(void) {
   printf("Usage: echo-server <port>\n");
@@ -25,4 +27,14 @@ int read_request_body_per_line(int socket, char *buf, int len) {
   }
 
   return len - l;
+}
+
+char* get_port_number(char* t) {
+  char* p;
+  if (getenv("LISTEN_PORT") == NULL) {
+      strcpy(p, t);
+  } else {
+      strcpy(p, getenv("LISTEN_PORT"));
+  }
+
 }
