@@ -11,3 +11,4 @@
 
 # bazel artifacts
 /bazel-*
+MODULE.bazel.lock
