@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.0](https://github.com/hwakabh/echo-server/compare/v0.3.14...v0.4.0) (2025-04-23)
+
+
+### Features
+
+* enabled to fetch LISTEN_PORT environment variables ([c8a46bc](https://github.com/hwakabh/echo-server/commit/c8a46bc51a26671af2579678382d2bcad4380a73))
+* enabled to fetch LISTEN_PORT. ([77d2f0f](https://github.com/hwakabh/echo-server/commit/77d2f0f0124d18ec2b617c89eda22d0ecbafeb41))
+
+
+### Miscellaneous Chores
+
+* updated gitignore for bazel. ([fe26f22](https://github.com/hwakabh/echo-server/commit/fe26f22323ab07b738f85000e83ac64576bcb009))
+
 ## [0.3.14](https://github.com/hwakabh/echo-server/compare/v0.3.13...v0.3.14) (2025-04-22)
 
 
