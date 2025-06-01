@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.4](https://github.com/hwakabh/echo-server/compare/v0.4.3...v0.4.4) (2025-06-01)
+
+
+### Miscellaneous Chores
+
+* **deps:** update bazel-contrib/setup-bazel action to v0.15.0 ([0644fa8](https://github.com/hwakabh/echo-server/commit/0644fa8949731e5c9344ae08ce654ad3d7ddb9f4))
+
 ## [0.4.3](https://github.com/hwakabh/echo-server/compare/v0.4.2...v0.4.3) (2025-05-25)
 
 
