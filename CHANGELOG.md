@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.5](https://github.com/hwakabh/echo-server/compare/v0.4.4...v0.4.5) (2025-06-17)
+
+
+### Miscellaneous Chores
+
+* **deps:** update all non-major dependencies ([f8ff37c](https://github.com/hwakabh/echo-server/commit/f8ff37ca1db722d1e251050d1a4e2defe21e9500))
+* **deps:** update all non-major dependencies ([e4ff848](https://github.com/hwakabh/echo-server/commit/e4ff84841f1a41be91a265d657762b6dd6dd50f6))
+
 ## [0.4.4](https://github.com/hwakabh/echo-server/compare/v0.4.3...v0.4.4) (2025-06-01)
 
 
