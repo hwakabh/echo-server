@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.6](https://github.com/hwakabh/echo-server/compare/v0.4.5...v0.4.6) (2025-07-19)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency rules_cc to v0.1.4 ([6d8889a](https://github.com/hwakabh/echo-server/commit/6d8889a8ad23b94e6d9f03d631ef845e163ed3af))
+* **deps:** update dependency rules_cc to v0.1.4 ([5d3e71e](https://github.com/hwakabh/echo-server/commit/5d3e71e88e832392d127de59e3e6eb92281e99cb))
+
 ## [0.4.5](https://github.com/hwakabh/echo-server/compare/v0.4.4...v0.4.5) (2025-06-17)
 
 
