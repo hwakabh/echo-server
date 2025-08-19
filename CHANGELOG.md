@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.4.7](https://github.com/hwakabh/echo-server/compare/v0.4.6...v0.4.7) (2025-08-19)
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/checkout action to v5 ([3a530ed](https://github.com/hwakabh/echo-server/commit/3a530ed6cb354e4c7dd40acd6c37ff10896bc948))
+* **deps:** update actions/checkout action to v5 ([2a35f83](https://github.com/hwakabh/echo-server/commit/2a35f833624d1845c2b11159db456be555923b2a))
+* **deps:** update all non-major dependencies ([91a7f38](https://github.com/hwakabh/echo-server/commit/91a7f383b76357a08d68d08e99f123db012f3890))
+* **deps:** update all non-major dependencies ([2d11240](https://github.com/hwakabh/echo-server/commit/2d112407310bd26577dee099f7883c6f731836b3))
+
 ## [0.4.6](https://github.com/hwakabh/echo-server/compare/v0.4.5...v0.4.6) (2025-07-19)
 
 
