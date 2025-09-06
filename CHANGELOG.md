@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.10](https://github.com/hwakabh/echo-server/compare/v0.4.9...v0.4.10) (2025-09-06)
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/labeler action to v6 ([015abcf](https://github.com/hwakabh/echo-server/commit/015abcf35af4282f67540aac9b9d8e520f91aa74))
+* **deps:** update actions/labeler action to v6 ([3bf4dc5](https://github.com/hwakabh/echo-server/commit/3bf4dc5cb601c1f85b9c7d20bd59e876559e9bc7))
+
 ## [0.4.9](https://github.com/hwakabh/echo-server/compare/v0.4.8...v0.4.9) (2025-09-04)
 
 
