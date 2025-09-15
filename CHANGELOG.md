@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.12](https://github.com/hwakabh/echo-server/compare/v0.4.11...v0.4.12) (2025-09-15)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency rules_cc to v0.2.8 ([3f16979](https://github.com/hwakabh/echo-server/commit/3f16979095811a7bb2f8e4a78f0012acb26bfb4c))
+* **deps:** update dependency rules_cc to v0.2.8 ([da365de](https://github.com/hwakabh/echo-server/commit/da365dedd67b1c8c0cd6b739eec4cfc4dba37a07))
+
 ## [0.4.11](https://github.com/hwakabh/echo-server/compare/v0.4.10...v0.4.11) (2025-09-09)
 
 
