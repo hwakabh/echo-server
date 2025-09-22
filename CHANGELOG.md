@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.13](https://github.com/hwakabh/echo-server/compare/v0.4.12...v0.4.13) (2025-09-22)
+
+
+### Continuous Integration
+
+* disabled release-please-action for deps updates. ([fd48d97](https://github.com/hwakabh/echo-server/commit/fd48d97ac6413b370e3dbe271043e6ef6eed0542))
+
 ## [0.4.12](https://github.com/hwakabh/echo-server/compare/v0.4.11...v0.4.12) (2025-09-15)
 
 
